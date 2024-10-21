@@ -10,7 +10,7 @@ row_count=df.shape[0]
 
 #Exercise 1.1
 #a), Pie chart ethnic group, "ethgp "Other" is not in the dataset?
-ethnic_grp = {'White':1,'Asian':2,'West Indian':3,'African':4} #use in txtlabels
+""" ethnic_grp = {'White':1,'Asian':2,'West Indian':3,'African':4} #use in txtlabels
 fractions = []
 ethnic_grp_count=df['ethnicgp'].value_counts().to_dict()
 df_count=df.shape[0]
@@ -21,7 +21,7 @@ plt.pie(fractions, labels=list(ethnic_grp.keys()),
 autopct='%1.1f%%', shadow=True, startangle=90,
 colors=sb.color_palette('muted') )
 plt.axis('equal')
-plt.show()
+plt.show() """
 
 #Plot of gender in bar chart
 """ gender_count=df['gender'].value_counts().to_dict()
@@ -34,7 +34,7 @@ plt.show() """
 
 #b) For column Age: 
 # summarize: max, min, median, the first and third quartiles and then a box-plot
-min_value = df['age'].min()
+""" min_value = df['age'].min()
 max_value = df['age'].max()
 mean=df['age'].mean()
 std=df['age'].std()
@@ -42,7 +42,7 @@ first_quartile=df['age'].quantile(0.25)
 third_quartile=df['age'].quantile(0.75)
 print("min",min_value,"max",max_value, "mean",mean,"q1",first_quartile, "q3",third_quartile) 
 sb.boxplot(data=df['age'])
-plt.show()
+plt.show() """
 #c)Histogram, mean and std of income
 """ x=df.groupby(['income']).size().reset_index(name='counts')
 plt.xlabel("Income")
