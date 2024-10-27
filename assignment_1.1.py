@@ -4,8 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 #Load data
 df=pd.read_excel("Data_source.xlsx")
-#note: rows containing NaN values will be dropped
-#df=df.dropna()
 row_count=df.shape[0]
 df=df.fillna(df.mean())
 column_to_exclude='income'
@@ -13,7 +11,7 @@ df.loc[:, df.columns != column_to_exclude] = df.loc[:, df.columns != column_to_e
 df['income']=df['income'].round(1)
 #Exercise 1.1
 #a), Pie chart ethnic group, "ethgp "Other" is not in the dataset?
-""" ethnic_grp = {'White':1,'Asian':2,'West Indian':3,'African':4} #use in txtlabels
+ethnic_grp = {'White':1,'Asian':2,'West Indian':3,'African':4} #use in txtlabels
 fractions = []
 ethnic_grp_count=df['ethnicgp'].value_counts().to_dict()
 df_count=df.shape[0]
@@ -23,7 +21,7 @@ plt.pie(fractions, labels=list(ethnic_grp.keys()),
 autopct='%1.1f%%', startangle=90,
 colors=sb.color_palette('muted') )
 plt.axis('equal')
-plt.show() """
+plt.show()
 
 #Plot of gender in bar chart
 """ gender_count=df['gender'].value_counts().to_dict()
@@ -46,13 +44,14 @@ print("min",min_value,"max",max_value, "mean",mean,"q1",first_quartile, "q3",thi
 sb.boxplot(data=df['age'])
 plt.show() """
 #c)Histogram, mean and std of income
-x=df.groupby(['income']).size().reset_index(name='counts')
+""" x=df['income']
 plt.xlabel("Income")
 plt.ylabel("Frequency")
-plt.hist(x,bins=range(11,22))
+plt.hist(x,bins="auto",edgecolor='white')
+print(x)
 income=df['income'].array
 std=np.std(income)
 mean=np.mean(income)
-#plt.figtext(0.7, 0.8, f"std = {std:.2f}", fontsize=12)
-#plt.figtext(0.7, 0.76, f"mean = {mean:.2f}", fontsize=12)
-plt.show()
+plt.figtext(0.7, 0.8, f"std = {std:.2f}", fontsize=12)
+plt.figtext(0.7, 0.76, f"mean = {mean:.2f}", fontsize=12)
+plt.show() """

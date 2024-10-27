@@ -29,4 +29,4 @@ print("intercept b0", model.intercept_)
 #coefficient of determination 0.06193728188201264
 #slope b1 -0.14277317
 #intercept b0 16.30548446
-#estimated line: y=-0.14277317+16.30548446x
+#estimated line: y=-0.14277317x+16.30548446
